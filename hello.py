@@ -5,4 +5,4 @@ def app(environ, start_response):
     body = ''
     for i in environ.split('&'):
         body += i + '\n'
-    return body
+    return [body]
