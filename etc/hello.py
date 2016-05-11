@@ -1,8 +1,12 @@
-def app(environ, start_response):
-    status = '200'
-    header = [('Content-Type', 'text/plain')]
-    status_response(status, header)
-    body = ''
-    for i in environ.split('&'):
-        body += i + '\n'
-    return body
+CONFIG = {
+    'mode': 'wsgi',
+    'working_dir': '/home/box/web',
+    'python': '/usr/bin/python',
+    'args': (
+        '--bind=0.0.0.0:8000',
+        '--workers=5',
+        '--timeout=60',
+        '--log-file=/home/box/web/gunicorn.log',
+        'hello:app',
+    )
+}
