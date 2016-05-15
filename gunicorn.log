@@ -1,350 +1,147 @@
-2016-05-14 21:35:20 [13869] [INFO] Starting gunicorn 17.5
-2016-05-14 21:35:20 [13869] [INFO] Listening at: http://0.0.0.0:8080 (13869)
-2016-05-14 21:35:20 [13869] [INFO] Using worker: sync
-2016-05-14 21:35:20 [13874] [INFO] Booting worker with pid: 13874
-2016-05-14 21:35:20 [13875] [INFO] Booting worker with pid: 13875
-2016-05-14 21:35:20 [13876] [INFO] Booting worker with pid: 13876
-2016-05-14 21:35:20 [13877] [INFO] Booting worker with pid: 13877
-2016-05-14 21:35:20 [13878] [INFO] Booting worker with pid: 13878
-2016-05-15 00:01:17 [13869] [INFO] Handling signal: term
-2016-05-15 00:01:17 [13875] [INFO] Worker exiting (pid: 13875)
-2016-05-15 00:01:17 [13874] [INFO] Worker exiting (pid: 13874)
-2016-05-15 00:01:17 [13877] [INFO] Worker exiting (pid: 13877)
-2016-05-15 00:01:17 [13876] [INFO] Worker exiting (pid: 13876)
-2016-05-15 00:01:17 [13878] [INFO] Worker exiting (pid: 13878)
-2016-05-15 00:01:17 [13869] [INFO] Shutting down: Master
-2016-05-15 00:01:17 [18370] [INFO] Starting gunicorn 17.5
-2016-05-15 00:01:17 [18370] [INFO] Listening at: http://0.0.0.0:8000 (18370)
-2016-05-15 00:01:17 [18370] [INFO] Using worker: sync
-2016-05-15 00:01:17 [18375] [INFO] Booting worker with pid: 18375
-2016-05-15 00:01:17 [18376] [INFO] Booting worker with pid: 18376
-2016-05-15 00:01:17 [18375] [ERROR] Exception in worker process:
+05-15 05:43:07 [379] [INFO] Booting worker with pid: 379
+2016-05-15 05:43:18 [377] [ERROR] Error handling request
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
+  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
+    sys.exc_info()[2])
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
+2016-05-15 05:43:18 [377] [ERROR] Error handling request
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:01:17 [18375] [INFO] Worker exiting (pid: 18375)
-2016-05-15 00:01:17 [18376] [ERROR] Exception in worker process:
+  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
+    sys.exc_info()[2])
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
+2016-05-15 05:45:56 [377] [ERROR] Error handling request
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
+  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
+    sys.exc_info()[2])
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
+2016-05-15 05:57:05 [378] [ERROR] Error handling request
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:01:17 [18376] [INFO] Worker exiting (pid: 18376)
-2016-05-15 00:01:17 [18377] [INFO] Booting worker with pid: 18377
-2016-05-15 00:01:17 [18378] [INFO] Booting worker with pid: 18378
-2016-05-15 00:01:17 [18379] [INFO] Booting worker with pid: 18379
-2016-05-15 00:01:17 [18378] [ERROR] Exception in worker process:
+  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
+    sys.exc_info()[2])
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
+2016-05-15 05:57:05 [376] [ERROR] Error handling request
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
+  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
+    sys.exc_info()[2])
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
+2016-05-15 05:57:34 [375] [ERROR] Error handling request
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:01:17 [18378] [INFO] Worker exiting (pid: 18378)
+  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
+    sys.exc_info()[2])
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
+2016-05-15 05:57:44 [377] [ERROR] Error handling request
 Traceback (most recent call last):
-  File "/usr/bin/gunicorn", line 9, in <module>
-    load_entry_point('gunicorn==17.5', 'console_scripts', 'gunicorn')()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 42, in run
-    WSGIApplication("%(prog)s [OPTIONS] APP_MODULE").run()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 144, in run
-    Arbiter(self).run()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 196, in run
-    self.halt(reason=inst.reason, exit_status=inst.exit_status)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 291, in halt
-    self.stop()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 334, in stop
-    self.reap_workers()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 430, in reap_workers
-    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
-gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
-2016-05-15 00:01:17 [18377] [ERROR] Exception in worker process:
+  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
+    sys.exc_info()[2])
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
+2016-05-15 05:58:03 [375] [ERROR] Error handling request
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:01:17 [18377] [INFO] Worker exiting (pid: 18377)
-2016-05-15 00:01:17 [18379] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:01:17 [18379] [INFO] Worker exiting (pid: 18379)
-2016-05-15 00:02:51 [18451] [INFO] Starting gunicorn 17.5
-2016-05-15 00:02:51 [18451] [INFO] Listening at: http://0.0.0.0:8000 (18451)
-2016-05-15 00:02:51 [18451] [INFO] Using worker: sync
-2016-05-15 00:02:51 [18456] [INFO] Booting worker with pid: 18456
-2016-05-15 00:02:51 [18456] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:02:51 [18456] [INFO] Worker exiting (pid: 18456)
-2016-05-15 00:02:51 [18457] [INFO] Booting worker with pid: 18457
-2016-05-15 00:02:51 [18458] [INFO] Booting worker with pid: 18458
-2016-05-15 00:02:51 [18458] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:02:51 [18457] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:02:51 [18458] [INFO] Worker exiting (pid: 18458)
-2016-05-15 00:02:51 [18457] [INFO] Worker exiting (pid: 18457)
-2016-05-15 00:02:51 [18459] [INFO] Booting worker with pid: 18459
-2016-05-15 00:02:51 [18460] [INFO] Booting worker with pid: 18460
-2016-05-15 00:02:51 [18459] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:02:51 [18459] [INFO] Worker exiting (pid: 18459)
-2016-05-15 00:02:51 [18460] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:02:51 [18460] [INFO] Worker exiting (pid: 18460)
+  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
+    sys.exc_info()[2])
+  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
+2016-05-15 06:01:32 [370] [INFO] Handling signal: term
+2016-05-15 06:01:32 [376] [INFO] Worker exiting (pid: 376)
+2016-05-15 06:01:32 [378] [INFO] Worker exiting (pid: 378)
+2016-05-15 06:01:32 [377] [INFO] Worker exiting (pid: 377)
+2016-05-15 06:01:32 [379] [INFO] Worker exiting (pid: 379)
+2016-05-15 06:01:32 [375] [INFO] Worker exiting (pid: 375)
+2016-05-15 06:01:32 [370] [INFO] Shutting down: Master
+2016-05-15 06:01:32 [507] [INFO] Starting gunicorn 17.5
+2016-05-15 06:01:32 [507] [INFO] Listening at: http://0.0.0.0:8000 (507)
+2016-05-15 06:01:32 [507] [INFO] Using worker: sync
+2016-05-15 06:01:32 [512] [INFO] Booting worker with pid: 512
+Failed to find application: 'wsgi'
+2016-05-15 06:01:32 [512] [INFO] Worker exiting (pid: 512)
+2016-05-15 06:01:32 [513] [INFO] Booting worker with pid: 513
+2016-05-15 06:01:32 [514] [INFO] Booting worker with pid: 514
+Failed to find application: 'wsgi'
+2016-05-15 06:01:32 [513] [INFO] Worker exiting (pid: 513)
+2016-05-15 06:01:32 [515] [INFO] Booting worker with pid: 515
+Failed to find application: 'wsgi'
+2016-05-15 06:01:32 [514] [INFO] Worker exiting (pid: 514)
+2016-05-15 06:01:32 [516] [INFO] Booting worker with pid: 516
+Failed to find application: 'wsgi'
+2016-05-15 06:01:32 [515] [INFO] Worker exiting (pid: 515)
 Traceback (most recent call last):
   File "/usr/bin/gunicorn", line 9, in <module>
     load_entry_point('gunicorn==17.5', 'console_scripts', 'gunicorn')()
@@ -358,180 +155,27 @@ Traceback (most recent call last):
     self.stop()
   File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 334, in stop
     self.reap_workers()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 430, in reap_workers
-    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
-gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
-2016-05-15 00:03:20 [18509] [INFO] Starting gunicorn 17.5
-2016-05-15 00:03:20 [18509] [INFO] Listening at: http://0.0.0.0:8000 (18509)
-2016-05-15 00:03:20 [18509] [INFO] Using worker: sync
-2016-05-15 00:03:20 [18514] [INFO] Booting worker with pid: 18514
-2016-05-15 00:03:20 [18514] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:03:20 [18514] [INFO] Worker exiting (pid: 18514)
-2016-05-15 00:03:20 [18515] [INFO] Booting worker with pid: 18515
-2016-05-15 00:03:20 [18516] [INFO] Booting worker with pid: 18516
-2016-05-15 00:03:20 [18515] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:03:20 [18515] [INFO] Worker exiting (pid: 18515)
-2016-05-15 00:03:20 [18517] [INFO] Booting worker with pid: 18517
-2016-05-15 00:03:20 [18518] [INFO] Booting worker with pid: 18518
-2016-05-15 00:03:20 [18516] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:03:20 [18516] [INFO] Worker exiting (pid: 18516)
-2016-05-15 00:03:21 [18517] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:03:21 [18517] [INFO] Worker exiting (pid: 18517)
+  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 433, in reap_workers
+    raise HaltServer(reason, self.APP_LOAD_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'App failed to load.' 4>
+Failed to find application: 'wsgi'
+2016-05-15 06:01:32 [516] [INFO] Worker exiting (pid: 516)
+2016-05-15 06:08:45 [605] [INFO] Starting gunicorn 17.5
+2016-05-15 06:08:45 [605] [INFO] Listening at: http://0.0.0.0:8000 (605)
+2016-05-15 06:08:45 [605] [INFO] Using worker: sync
+2016-05-15 06:08:45 [610] [INFO] Booting worker with pid: 610
+2016-05-15 06:08:45 [611] [INFO] Booting worker with pid: 611
+Failed to find application: 'wsgi'
+2016-05-15 06:08:45 [610] [INFO] Worker exiting (pid: 610)
+2016-05-15 06:08:46 [612] [INFO] Booting worker with pid: 612
+Failed to find application: 'wsgi'
+2016-05-15 06:08:46 [611] [INFO] Worker exiting (pid: 611)
+2016-05-15 06:08:46 [613] [INFO] Booting worker with pid: 613
+2016-05-15 06:08:46 [614] [INFO] Booting worker with pid: 614
+Failed to find application: 'wsgi'
+2016-05-15 06:08:46 [612] [INFO] Worker exiting (pid: 612)
 Traceback (most recent call last):
   File "/usr/bin/gunicorn", line 9, in <module>
     load_entry_point('gunicorn==17.5', 'console_scripts', 'gunicorn')()
   File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 42, in run
     WSGIApplication("%(prog)s [OPTIONS] APP_MODULE").run()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 144, in run
-    Arbiter(self).run()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 196, in run
-    self.halt(reason=inst.reason, exit_status=inst.exit_status)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 291, in halt
-    self.stop()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 334, in stop
-    self.reap_workers()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 430, in reap_workers
-    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
-gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
-2016-05-15 00:03:21 [18518] [ERROR] Exception in worker process:
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 473, in spawn_worker
-    worker.init_process()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 100, in init_process
-    self.wsgi = self.app.wsgi()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 115, in wsgi
-    self.callable = self.load()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 33, in load
-    return util.import_app(self.app_uri)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/util.py", line 362, in import_app
-    __import__(module)
-  File "/home/apllicator/box/web/ask/ask/wsgi.py", line 14, in <module>
-    sys.path.append('/home/apllicator/box/web/ask')
-NameError: name 'sys' is not defined
-2016-05-15 00:03:21 [18518] [INFO] Worker exiting (pid: 18518)
