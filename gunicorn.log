@@ -1,5 +1,12 @@
-05-15 05:43:07 [379] [INFO] Booting worker with pid: 379
-2016-05-15 05:43:18 [377] [ERROR] Error handling request
+2016-05-15 07:11:07 [918] [INFO] Starting gunicorn 17.5
+2016-05-15 07:11:07 [918] [INFO] Listening at: http://0.0.0.0:8000 (918)
+2016-05-15 07:11:07 [918] [INFO] Using worker: sync
+2016-05-15 07:11:07 [923] [INFO] Booting worker with pid: 923
+2016-05-15 07:11:07 [924] [INFO] Booting worker with pid: 924
+2016-05-15 07:11:08 [925] [INFO] Booting worker with pid: 925
+2016-05-15 07:11:08 [926] [INFO] Booting worker with pid: 926
+2016-05-15 07:11:08 [927] [INFO] Booting worker with pid: 927
+2016-05-15 07:11:31 [927] [ERROR] Error handling request
 Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
     respiter = self.wsgi(environ, resp.start_response)
@@ -14,7 +21,7 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
     __import__(name)
 ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
-2016-05-15 05:43:18 [377] [ERROR] Error handling request
+2016-05-15 07:11:31 [926] [ERROR] Error handling request
 Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
     respiter = self.wsgi(environ, resp.start_response)
@@ -29,7 +36,7 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
     __import__(name)
 ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
-2016-05-15 05:45:56 [377] [ERROR] Error handling request
+2016-05-15 07:15:47 [925] [ERROR] Error handling request
 Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
     respiter = self.wsgi(environ, resp.start_response)
@@ -44,7 +51,7 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
     __import__(name)
 ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
-2016-05-15 05:57:05 [378] [ERROR] Error handling request
+2016-05-15 07:15:47 [927] [ERROR] Error handling request
 Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
     respiter = self.wsgi(environ, resp.start_response)
@@ -59,7 +66,7 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
     __import__(name)
 ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
-2016-05-15 05:57:05 [376] [ERROR] Error handling request
+2016-05-15 07:17:15 [924] [ERROR] Error handling request
 Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
     respiter = self.wsgi(environ, resp.start_response)
@@ -74,7 +81,7 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
     __import__(name)
 ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
-2016-05-15 05:57:34 [375] [ERROR] Error handling request
+2016-05-15 07:17:15 [925] [ERROR] Error handling request
 Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
     respiter = self.wsgi(environ, resp.start_response)
@@ -89,7 +96,7 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
     __import__(name)
 ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
-2016-05-15 05:57:44 [377] [ERROR] Error handling request
+2016-05-15 07:17:42 [923] [ERROR] Error handling request
 Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
     respiter = self.wsgi(environ, resp.start_response)
@@ -104,78 +111,3 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
     __import__(name)
 ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
-2016-05-15 05:58:03 [375] [ERROR] Error handling request
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/gunicorn/workers/sync.py", line 126, in handle_request
-    respiter = self.wsgi(environ, resp.start_response)
-  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 187, in __call__
-    self.load_middleware()
-  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 45, in load_middleware
-    mw_class = import_by_path(middleware_path)
-  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 26, in import_by_path
-    sys.exc_info()[2])
-  File "/usr/lib/python2.7/dist-packages/django/utils/module_loading.py", line 21, in import_by_path
-    module = import_module(module_path)
-  File "/usr/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
-    __import__(name)
-ImproperlyConfigured: Error importing module django.middleware.security: "No module named security"
-2016-05-15 06:01:32 [370] [INFO] Handling signal: term
-2016-05-15 06:01:32 [376] [INFO] Worker exiting (pid: 376)
-2016-05-15 06:01:32 [378] [INFO] Worker exiting (pid: 378)
-2016-05-15 06:01:32 [377] [INFO] Worker exiting (pid: 377)
-2016-05-15 06:01:32 [379] [INFO] Worker exiting (pid: 379)
-2016-05-15 06:01:32 [375] [INFO] Worker exiting (pid: 375)
-2016-05-15 06:01:32 [370] [INFO] Shutting down: Master
-2016-05-15 06:01:32 [507] [INFO] Starting gunicorn 17.5
-2016-05-15 06:01:32 [507] [INFO] Listening at: http://0.0.0.0:8000 (507)
-2016-05-15 06:01:32 [507] [INFO] Using worker: sync
-2016-05-15 06:01:32 [512] [INFO] Booting worker with pid: 512
-Failed to find application: 'wsgi'
-2016-05-15 06:01:32 [512] [INFO] Worker exiting (pid: 512)
-2016-05-15 06:01:32 [513] [INFO] Booting worker with pid: 513
-2016-05-15 06:01:32 [514] [INFO] Booting worker with pid: 514
-Failed to find application: 'wsgi'
-2016-05-15 06:01:32 [513] [INFO] Worker exiting (pid: 513)
-2016-05-15 06:01:32 [515] [INFO] Booting worker with pid: 515
-Failed to find application: 'wsgi'
-2016-05-15 06:01:32 [514] [INFO] Worker exiting (pid: 514)
-2016-05-15 06:01:32 [516] [INFO] Booting worker with pid: 516
-Failed to find application: 'wsgi'
-2016-05-15 06:01:32 [515] [INFO] Worker exiting (pid: 515)
-Traceback (most recent call last):
-  File "/usr/bin/gunicorn", line 9, in <module>
-    load_entry_point('gunicorn==17.5', 'console_scripts', 'gunicorn')()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 42, in run
-    WSGIApplication("%(prog)s [OPTIONS] APP_MODULE").run()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/base.py", line 144, in run
-    Arbiter(self).run()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 196, in run
-    self.halt(reason=inst.reason, exit_status=inst.exit_status)
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 291, in halt
-    self.stop()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 334, in stop
-    self.reap_workers()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 433, in reap_workers
-    raise HaltServer(reason, self.APP_LOAD_ERROR)
-gunicorn.errors.HaltServer: <HaltServer 'App failed to load.' 4>
-Failed to find application: 'wsgi'
-2016-05-15 06:01:32 [516] [INFO] Worker exiting (pid: 516)
-2016-05-15 06:08:45 [605] [INFO] Starting gunicorn 17.5
-2016-05-15 06:08:45 [605] [INFO] Listening at: http://0.0.0.0:8000 (605)
-2016-05-15 06:08:45 [605] [INFO] Using worker: sync
-2016-05-15 06:08:45 [610] [INFO] Booting worker with pid: 610
-2016-05-15 06:08:45 [611] [INFO] Booting worker with pid: 611
-Failed to find application: 'wsgi'
-2016-05-15 06:08:45 [610] [INFO] Worker exiting (pid: 610)
-2016-05-15 06:08:46 [612] [INFO] Booting worker with pid: 612
-Failed to find application: 'wsgi'
-2016-05-15 06:08:46 [611] [INFO] Worker exiting (pid: 611)
-2016-05-15 06:08:46 [613] [INFO] Booting worker with pid: 613
-2016-05-15 06:08:46 [614] [INFO] Booting worker with pid: 614
-Failed to find application: 'wsgi'
-2016-05-15 06:08:46 [612] [INFO] Worker exiting (pid: 612)
-Traceback (most recent call last):
-  File "/usr/bin/gunicorn", line 9, in <module>
-    load_entry_point('gunicorn==17.5', 'console_scripts', 'gunicorn')()
-  File "/usr/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 42, in run
-    WSGIApplication("%(prog)s [OPTIONS] APP_MODULE").run()
